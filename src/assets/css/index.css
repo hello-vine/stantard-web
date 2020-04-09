@@ -47,7 +47,7 @@ header {
 
 /* // Header */
 
-/* Content */
+/* Title */
 
 .title {
     text-align: center;
@@ -55,6 +55,11 @@ header {
     border-bottom: 1px solid #0D0D0D;
 }
 
-.title h3 {
+.title h4,
+.title h6 {
     margin-top: 16px;
 }
+
+/* // Title */
+
+/* Content */
