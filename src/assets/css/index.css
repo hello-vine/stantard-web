@@ -1,3 +1,5 @@
+/* Patters */
+
 * {
     font-family: 'Work Sans', sans-serif;
     margin: 0;
@@ -14,7 +16,18 @@ body {
     width: 100%;
     max-width: 1200px;
     margin: auto;
+    border-bottom: 1px solid #0D0D0D;
 }
+
+.content {
+    padding: 48px 0;
+}
+
+h1 {
+    margin-bottom: 8px;
+}
+
+/* // Patters */
 
 /* Header */
 
@@ -50,16 +63,8 @@ header {
 /* Title */
 
 .title {
-    text-align: center;
+    /* text-align: center; */
     padding: 48px 0;
-    border-bottom: 1px solid #0D0D0D;
-}
-
-.title h4,
-.title h6 {
-    margin-top: 16px;
 }
 
 /* // Title */
-
-/* Content */
