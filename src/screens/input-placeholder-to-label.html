@@ -2,7 +2,43 @@
 
 <style>
 
+    /* Standard */
 
+    .input-placeholder-to-label {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .input-placeholder-to-label input {
+        width: 300px;
+        height: 40px;
+        display: flex;
+        margin-top: 8px;
+        border: none;
+        background-color: transparent;
+        border-bottom: 2px solid #009696;
+        position: relative;
+        outline: 0;
+        z-index: 1;
+    }
+
+    /* // Stardard */
+
+    .input-placeholder-to-label label {
+        position: absolute;
+        transform: translate(0px, 21px);
+        font-size: 14px;
+        color: #757982;
+        transition: .2s;
+        z-index: 0;
+    }
+
+    .input-placeholder-to-label-focus {
+        transform: translate(0px, 0px) !important;
+        font-size: 12px !important;
+        color: #009696 !important;
+    }
 
 </style>
 
@@ -12,7 +48,37 @@
 
 <div class="container sections">
 
-    <h1> Input </h1>
+    <h1> Input placeholder to label </h1>
+    <p> I doed this code for when focus input, the placeholder is change for one label </p>
+    <small> I doed this only CSS </small>
+
+    <article class="content input-placeholder-to-label">
+
+        <div class="group-input_input-placeholder-to-label">
+
+            <label id="label_input-placeholder-to-label"> Name </label>
+
+            <input id="input_input-placeholder-to-label"/>
+
+        </div>
+
+        <div class="group-input_input-placeholder-to-label">
+
+            <label id="label_input-placeholder-to-label"> E-mail </label>
+
+            <input id="input_input-placeholder-to-label"/>
+
+        </div>
+
+        <div class="group-input_input-placeholder-to-label">
+
+            <label id="label_input-placeholder-to-label"> Phone </label>
+
+            <input id="input_input-placeholder-to-label"/>
+
+        </div>
+
+    </article>
 
 </div>
 
@@ -22,7 +88,33 @@
 
 <script type="text/javascript">
 
+    var input = document.getElementById('input_input-placeholder-to-label');
 
+    var label = document.getElementById('label_input-placeholder-to-label');
+
+    var getLabel = label.getAttribute('class');
+
+    var classLabel = 'input-placeholder-to-label-focus';
+
+    input.addEventListener('click', function() {
+
+        setTimeout(function() {
+
+            label.setAttribute('class', classLabel);
+            
+        }, 1);
+
+    });
+
+    window.addEventListener('click', function() {
+
+        if(input.value.length < 1) {
+
+            label.setAttribute('class', '');
+
+        }
+
+    });
 
 </script>
 
