@@ -1,14 +1,64 @@
 <!-- This is a hover test that hovers one element and changes another element -->
 
-<!-- Styles -->
+<!-- Style -->
 
 <style>
 
+    /* Standard */
 
+    .content-hover_hover-another-element,
+    .content-changes_hover-another-element {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .content-hover_hover-another-element div,
+    .content-changes_hover-another-element div {
+        padding: 8px 32px;
+        border-radius: 48px;
+        margin-top: 16px;
+        cursor: pointer;
+        color: #F2F2F2;
+        transition: .4s;
+    }
+
+    /* // Standard */
+
+    /* hover button */
+
+    #button-hover_hover-another-element {
+        background-color: #009696;
+    }
+
+    #button-hover_hover-another-element:hover {
+        background-color: #FF9C2F;
+    }
+
+    /* // Hover button */
+
+    /* Changes button */
+
+    .content-changes_hover-another-element div {
+        background-color: #FF9C2F;
+    }
+
+    .content-changes_hover-another-element div:hover {
+        background-color: #009696;
+    }
+    
+    .button-changes_hover-another-element-hover {
+        background-color: #009696 !important;
+        transition: .4s;
+    }
+
+    /* // Changes button */
 
 </style>
 
-<!-- // Styles -->
+<!-- // Style -->
 
 <!-- Content -->
 
@@ -16,13 +66,68 @@
 
     <h1> Hover another Element </h1>
     <p> This code is for to do hover that one element, but to do changes another element too </p>
+    <small> I do this code with neat javascript </small>
 
-    <article class="content">
+    <article class="content hover-another-element">
 
-        Meu teste
+        <div class="content-hover_hover-another-element">
+
+            <label> Hover here </label>
+
+            <div id="button-hover_hover-another-element"> button </div>
+
+        </div>
+
+        <div class="content-changes_hover-another-element">
+
+            <label> Changes here</label>
+
+            <div id="button-changes_hover-another-element"> button </div>
+            
+        </div>
 
     </article>
 
 </div>
 
 <!-- // Content -->
+
+<!-- Script -->
+
+<script type="text/javascript">
+
+    // Get hover button
+
+    var button_hover = document.getElementById('button-hover_hover-another-element');
+
+    // Get changes button
+
+    var button_changes = document.getElementById('button-changes_hover-another-element');
+
+    // Function mouse over
+
+    function mouseOver() {
+
+        button_changes.setAttribute('class', 'button-changes_hover-another-element-hover');
+
+    }
+
+    // Function mouse out
+
+    function mouseOut() {
+
+        button_changes.setAttribute('class', '');
+
+    }
+
+    // Listener mouse over
+
+    button_hover.addEventListener('mouseover', mouseOver);
+
+    // Listener mouse out
+
+    button_hover.addEventListener('mouseout', mouseOut);    
+
+</script>
+
+<!-- // Script -->
