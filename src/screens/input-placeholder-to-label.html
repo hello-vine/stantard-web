@@ -48,7 +48,7 @@
 
     <h1> Input placeholder to label </h1>
     <p> I doed this code for when focus input, the placeholder is change for one label </p>
-    <small> I doed this only CSS </small>
+    <small> I doed this with javascript </small>
 
     <article class="content input-placeholder-to-label">
 
@@ -56,7 +56,7 @@
 
             <label id="label_input-placeholder-to-label"> Name </label>
 
-            <input id="input_input-placeholder-to-label"/>
+        <input id="input_input-placeholder-to-label"/>
 
         </div>
 
@@ -86,29 +86,21 @@
 
 <script type="text/javascript">
 
-    var input = document.getElementById('input_input-placeholder-to-label');
+    var input = document.querySelectorAll("input");
 
     var label = document.getElementById('label_input-placeholder-to-label');
 
     var classLabel = 'input-placeholder-to-label-focus';
 
-    input.addEventListener('click', function() {
+    var inputArray = Array.from(input);
 
-        setTimeout(function() {
+    inputArray.forEach(element => {
 
-            label.setAttribute('class', classLabel);
-            
-        }, 1);
+        element.addEventListener('click', function() {
 
-    });
+            $(this).parent().find('label').addClass(classLabel);
 
-    window.addEventListener('click', function() {
-
-        if(input.value.length < 1) {
-
-            label.setAttribute('class', '');
-
-        }
+        });
 
     });
 
