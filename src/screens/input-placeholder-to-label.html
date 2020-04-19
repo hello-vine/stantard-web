@@ -47,8 +47,8 @@
 <div class="container sections">
 
     <h1> Input placeholder to label </h1>
-    <p> I doed this code for when focus input, the placeholder is change for one label </p>
-    <small> I doed this with javascript </small>
+    <p> I made this code so that when the user clicks on the input, the "placeholder" turns into a "label" </p>
+    <small> I did it with JavaScript </small>
 
     <article class="content input-placeholder-to-label">
 
@@ -86,7 +86,7 @@
 
 <script type="text/javascript">
 
-    var input = document.querySelectorAll("input");
+    var input = document.querySelectorAll("input#input_input-placeholder-to-label");
 
     var label = document.getElementById('label_input-placeholder-to-label');
 
@@ -96,9 +96,33 @@
 
     inputArray.forEach(element => {
 
+        var setElement = element;
+
+        window.addEventListener('click', function() {
+
+            setTimeout(function() {
+
+                if(setElement.value == '' && $(setElement).parent().find('label').hasClass(classLabel) == true) {
+
+                    $(setElement).parent().find('label').removeClass(classLabel);
+
+                }
+
+            },0);
+
+        });
+
+    });
+
+    inputArray.forEach(element => {
+  
         element.addEventListener('click', function() {
 
-            $(this).parent().find('label').addClass(classLabel);
+            setTimeout(function() {
+
+                $(element).parent().find('label').addClass(classLabel);
+
+            },10); 
 
         });
 
